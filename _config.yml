@@ -56,3 +56,8 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+exclude:
+  - README.md
+  - copy_doc.sh
+  - doc_to_page.py
+  - shared_version.sh
