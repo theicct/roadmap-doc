@@ -30,7 +30,7 @@ echo "Copying documentation from $shared_version"
 cp "$shared_version" .
 
 # Convert to Markdown
-pandoc -f docx -t gfm "$DOC_SHARED" -o $DOC_RAW
+pandoc -f docx -t gfm --wrap=preserve "$DOC_SHARED" -o $DOC_RAW
 
 # Run the Markdown processing script (model version is last thing printed)
 version=$(python doc_to_page.py $DOC_RAW "$DOC_INT.md" | tail -1)
