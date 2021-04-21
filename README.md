@@ -14,7 +14,7 @@
 
 1. Write your updates in the Word version
 2. Get review from the team, as necessary
-3. Save as a .pdf file to the _versions_ folder with the name _Roadmap vX.Y Model Documentation.pdf_ where _X_ and _Y_ reference the model version, e.g. _Roadmap v1.6 Model Documentation.pdf_
+3. Save as a .pdf file to the _versions_ folder with the name _Roadmap vX.Y Model Documentation.pdf_ where _X_ and _Y_ reference the model version, e.g. _Roadmap v1.6 Model Documentation.pdf_ (make sure you hide all markup before exporting)
 4. If you added images to the Word document, add them to the _assets_ folder
 5. Copy your changes to a Markdown version of the documentation either manually or automatically
    - 5a. Copy manually
@@ -26,7 +26,7 @@
       - If you added images in step 4, update the `IMG_MAP` in _doc_to_page.py_
       - Run the _copy_doc.sh_ bash script
 6. (Optional) Test your changes locally
-   - First, temporarily remove all references to the `roadmap-doc/` directory (it becomes the baseurl once served by GitHub)
+   - First, temporarily remove all references to the `roadmap-doc/` directory (it becomes the baseurl once served by GitHub) from the Markdown documentation file and the _config.yml file
    - run `jekyll serve`
    - Make sure you add back in the references to `roadmap-doc/`
 7. Add and commit the new documentation files
