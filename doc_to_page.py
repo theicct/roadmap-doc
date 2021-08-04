@@ -134,6 +134,7 @@ def fix_math(doc):
             l = _fix_inline(l)
         l = l.replace(r"\[", r"$$")
         l = l.replace(r"\]", r"$$")  # display math
+        l = l.replace(r"AFLEET\ Ratio", "AFLEET Ratio")  # HACK: hard fix for this case
         doc[i] = l
 
     return doc
@@ -162,6 +163,12 @@ def add_download_button(doc, version):
 
 
 def main():
+    """
+    Convert the raw pandoc-converted Word document to fixed, formatted Jekyll page.
+
+    indoc = "documentation_raw.md"
+    outdoc = "documentation"
+    """
     indoc, outdoc = get_file_names()
 
     with open(indoc) as f:
