@@ -27,7 +27,7 @@ def get_version(lines):
     """Find the version number."""
     for l in lines:
         l = lines[2]
-        v = re.search(r"model (v([\d]+[.]?)+)", l)
+        v = re.search(r"model (v([\d]+[.][\d]+))", l)
         if v:
             return v.group(1)
 
@@ -103,7 +103,7 @@ def add_toc(outdoc):
             if "<!--te-->" in l:
                 break
             else:
-                toc[i] = l.replace("    *", "*", 1)
+                toc[i] = l.replace(" *", "*", 1)
 
         toc.insert(toc.index("<!--ts-->\n"), "## Table of contents\n")  # Add TOC header
 
