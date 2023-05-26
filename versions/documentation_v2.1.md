@@ -1,7 +1,7 @@
 ---
 layout: page
-title: 'Roadmap v2.0 Documentation'
-permalink: /versions/v2.0/
+title: 'Roadmap v2.1 Documentation'
+permalink: /versions/v2.1/
 ---
 <!--ts-->
 <!--te-->
@@ -491,4 +491,4 @@ The Roadmap model data pipeline also provides the option to output MOVES3 model 
 
 Roadmap has the capability to run scenarios that use both subregional and segmented data. In this case, users must include mapping and sales files for subregions and segments separately. Default data is disaggregated first using subregional downscaling factors, then by segments. It is important to note that inputs for both levels of disaggregation must not both be totals, as this can lead to conflicting values. When defining further scenario inputs, it is required to provide the full level of detail in each input file; that is, the inputs should include detail for both subregion and vehicle segments.
 
-<button name='download' onclick="location.href='../Roadmap v2.0 Model Documentation.pdf'">Download as PDF</button>
+<button name='download' onclick="location.href='../Roadmap v2.1 Model Documentation.pdf'">Download as PDF</button>
