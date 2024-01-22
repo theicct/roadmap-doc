@@ -92,7 +92,7 @@ def get_file_names():
 
 def add_toc(outdoc):
     """Add table of contents using gh-md-toc utility."""
-    cmd = f"gh-md-toc --insert --no-backup {outdoc}"
+    cmd = f"./gh-md-toc --insert --no-backup {outdoc}"
     subprocess.run(cmd, shell=True, check=True)
 
     # When we added the TOC it inserted too much whitespace
