@@ -5,3 +5,6 @@ _site
 vendor
 .idea/*
 .DS_Store
+Gemfile
+Gemfile.lock
+gh-md-toc
