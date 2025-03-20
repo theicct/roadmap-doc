@@ -72,7 +72,13 @@ def add_front_matter(lines, version):
     lines.insert(1, "layout: page\n")
     lines.insert(2, f"title: 'Roadmap {version} Documentation'\n")
     lines.insert(3, f"permalink: /versions/{version}/\n")
-    lines.insert(4, "---\n")
+
+    major = int(version[1:].split(".")[0])
+    minor = int(version[1:].split(".")[1])
+    sortable_version = major * 100 + minor
+    lines.insert(4, f"sortable_version: {sortable_version}\n")
+
+    lines.insert(5, "---\n")
     return lines
 
 
