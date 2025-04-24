@@ -14,7 +14,7 @@ Roadmap was first developed in 2019 by Caleb Braun, Lingzhi Jin, and Josh Miller
 
 Roadmap is under continuing development. Documentation of all versions since v1.5 can be found here.
 
-{% assign pages = site.pages | sort: "sortable_version"" | reverse %}
+{% assign pages = site.pages | sort: "sortable_version" | reverse %}
 {% for page in pages %}
 {% if page.dir contains '/versions/' and page.title contains 'Roadmap v'%}
 <li><a class="page-link" href="{{ page.url | relative_url }}">{{ page.title | escape }}</a></li>
