@@ -138,9 +138,33 @@ def fix_math(doc):
     for i, l in enumerate(doc):
         if r"\(" in l:
             l = _fix_inline(l)
+
+        # Convert display math delimiters
         l = l.replace(r"\[", r"$$")
-        l = l.replace(r"\]", r"$$")  # display math
-        l = l.replace(r"AFLEET\ Ratio", "AFLEET Ratio")  # HACK: hard fix for this case
+        l = l.replace(r"\]", r"$$")
+
+        # Wrap equations that contain \frac but aren't already in $$
+        if r"\frac" in l and "$$" not in l:
+            l = "$$" + l.strip() + "$$"
+
+        # Fix double backslashes and escaped spaces in math expressions
+        if "$$" in l:
+            parts = l.split("$$")
+            for j in range(1, len(parts), 2):  # Only process math blocks (odd indices)
+                parts[j] = parts[j].replace("\\\\", "\\")
+                # Fix escaped spaces everywhere in math
+                parts[j] = parts[j].replace("\\ ", " ")
+            l = "$$".join(parts)
+
+        # Handle inline math
+        if "$" in l and "$$" not in l:
+            parts = l.split("$")
+            for j in range(1, len(parts), 2):
+                parts[j] = parts[j].replace("\\\\", "\\")
+                parts[j] = parts[j].replace("\\ ", " ")
+            l = "$".join(parts)
+
+        l = l.replace("\_}class", "_}class")
         doc[i] = l
 
     return doc
